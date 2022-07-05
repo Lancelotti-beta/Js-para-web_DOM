@@ -17,4 +17,7 @@
 
  - Manipular datas com libs em JavaScript | `moment.Js`
  - Refatorando códigoo com `Destructuring`
+ - Salvar dados no navegador utilizando `sessionStorage`
+ - Armazenar dados sem encerrar a sessão com e `localStorage`
+ - Transformar objetos em string utilizando `JSON.stringify()`
  
