@@ -20,4 +20,4 @@
  - Salvar dados no navegador utilizando `sessionStorage`
  - Armazenar dados sem encerrar a sessão com e `localStorage`
  - Transformar objetos em string utilizando `JSON.stringify()`
- 
+ - Utilizar o `curto circuito` para verificação lógica
