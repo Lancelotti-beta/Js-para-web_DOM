@@ -1,3 +1,4 @@
+import { carregaTarefa } from "./carregaTarefa.js";
 import BotaoConcluir from "./concluirTarefa.js";
 import BotaoDeletar from "./deletarTarefa.js";
 
@@ -8,36 +9,34 @@ function itemNaLista(e) {
 
     const campoDeEscrita = document.querySelector('[data-form-input]')
     const paragrafo = campoDeEscrita.value
-    
-    const lista = document.querySelector('[data-list]')
 
     //Formatando a hora e data
     const dataEHora = document.querySelector('[data-form-date]')
     const pegandoData = moment(dataEHora.value)
     const data = pegandoData.format('DD/MM/YYYY')
+    const hora = pegandoData.format('LT')
 
     const valor = {
         data,
+        hora,
         paragrafo
     }
     
     const tarefa = [...listaDeTarefas, valor]
 
-    //adicionando o valor do <p> ao <li>
-    const itemHTML = AdicionaNaLista(valor)
-    lista.appendChild(itemHTML)
-
     localStorage.setItem('tarefas', JSON.stringify(tarefa))
 
-    lista = ""
+    campoDeEscrita.value = ""
+    carregaTarefa()
 }
 
-const AdicionaNaLista = ( { data, paragrafo } ) => {
+const AdicionaNaLista = ( { data, hora, paragrafo } ) => {
     //criando uma <li>
     const topico = document.createElement('li')
     topico.classList.add('task')
+    //topico.innerHTML = `${data}`
     //adionando o valor do <input> ao <p>
-    const conteudo = `<p class="content">${data} | ${paragrafo}</p>`
+    const conteudo = `<p class="content">${hora} | ${paragrafo}</p>`
 
     topico.innerHTML = conteudo
     //adiciona botão a <li>
