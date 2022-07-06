@@ -4,13 +4,14 @@ export const adicionaData = (data) => {
     const listaDeTarefas = JSON.parse(localStorage.getItem('tarefas')) || []
 
     const diaDaTarefa = document.createElement('li')
-    const conteudo = `<p class="content-data">${data.format('DD/MM/YYYY')}</p>`
+    const dataDoEvento = moment(data, 'DD/MM/YYYY')
+    const conteudo = `<p class="content-data">${dataDoEvento.format('DD/MM/YYYY')}</p>`
 
     diaDaTarefa.innerHTML = conteudo
     listaDeTarefas.forEach( item => {
         const dia = moment(item.data, 'DD/MM/YYYY')
 
-        const diff = data.diff(dia)
+        const diff = dataDoEvento.diff(dia)
         if(diff === 0){
             diaDaTarefa.appendChild(AdicionaNaLista(item))
         }
