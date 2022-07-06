@@ -1,4 +1,4 @@
-import { AdicionaNaLista } from "./adicionaNaTabela.js";
+import { adicionaData } from "./adicionaData.js";
 
 export const carregaTarefa = () => {
     const lista = document.querySelector('[data-list]')
@@ -7,6 +7,7 @@ export const carregaTarefa = () => {
 
     lista.innerHTML = ""
     arquivadosCarregado.forEach(tarefas => {
-        lista.appendChild(AdicionaNaLista(tarefas))
+        const dia = moment(tarefas.data, 'DD/MM/YYYY')
+        lista.appendChild(adicionaData(dia))
     });
 }
