@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  width: 100vw;
 }
 
 .app {
@@ -16,9 +15,7 @@ body {
   font-family: "Space Mono", monospace;
   padding: 1rem;
   min-width: 400px;
-  width: auto;
   min-height: 300px;
-  height: auto;
 }
 
 .title {
@@ -133,7 +130,6 @@ body {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   outline: none;
   border-radius: 2px;
-  margin: .5rem;
   cursor: pointer;
 }
 
@@ -157,7 +153,14 @@ body {
 
 .content {
   margin: 0;
-  padding: .5rem;
+}
+
+.content-data { 
+  color: #F6F1D1;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 0.5rem;
+  padding: 1rem 3rem;
 }
 
 .task.done .content {
