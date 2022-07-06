@@ -8,12 +8,12 @@ export const adicionaData = (data) => {
     const conteudo = `<p class="content-data">${dataDoEvento.format('DD/MM/YYYY')}</p>`
 
     diaDaTarefa.innerHTML = conteudo
-    listaDeTarefas.forEach( item => {
+    listaDeTarefas.forEach((item, id) => {
         const dia = moment(item.data, 'DD/MM/YYYY')
 
         const diff = dataDoEvento.diff(dia)
         if(diff === 0){
-            diaDaTarefa.appendChild(AdicionaNaLista(item))
+            diaDaTarefa.appendChild(AdicionaNaLista(item, id))
         }
     })
 
