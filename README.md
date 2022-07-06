@@ -22,3 +22,5 @@
  - Transformar objetos em string utilizando `JSON.stringify()`
  - Utilizar o `curto circuito` para verificação lógica
  - métodos com `array` | Ordenar elementos do `localStorage`
+ - Alterar um estado utilizando operador de negação | `!`
+ - Remover dados do `LocalStorage` utilizando o método `.splice()`
