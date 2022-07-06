@@ -11,7 +11,7 @@
  - Utilizar o atributo `parentElement` com `.target` para subir e encontar um elemento na árvore do `DOM`
  - Removendo elementos do DOM com o método `.remove()`
  - Conhecendo e usando `IIFE` | `Encapsulemento`
- - Aprendendo `import` & `export` || `export default`
+ - Aprendendo `import`, `export` && `export default`
 
 ## Armazenando dados no Navegador - Parte II
 
@@ -21,3 +21,4 @@
  - Armazenar dados sem encerrar a sessão com e `localStorage`
  - Transformar objetos em string utilizando `JSON.stringify()`
  - Utilizar o `curto circuito` para verificação lógica
+ - métodos com `array` | Ordenar elementos do `localStorage`
