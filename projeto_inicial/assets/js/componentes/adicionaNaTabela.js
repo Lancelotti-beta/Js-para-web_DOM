@@ -13,11 +13,13 @@ function itemNaLista(e) {
     //Formatando a hora e data
     const dataEHora = document.querySelector('[data-form-date]')
     const dataRecebida = moment(dataEHora.value)
+    const hora = dataRecebida.format('HH:mm')
     const data = dataRecebida.format('DD/MM/YYYY')
     const concluida = false 
 
     const valor = {
         data,
+        hora,
         paragrafo,
         concluida
     }
@@ -30,12 +32,12 @@ function itemNaLista(e) {
     carregaTarefa()
 }
 
-const AdicionaNaLista = ( { data, paragrafo, concluida }, id ) => {
+const AdicionaNaLista = ( { hora, paragrafo, concluida }, id ) => {
     //criando uma <li>
     const topico = document.createElement('li')
 
     //adionando o valor do <input> ao <p>
-    const conteudo = `<p class="content">${data} | ${paragrafo}</p>`
+    const conteudo = `<p class="content">${hora} | ${paragrafo}</p>`
     if ( concluida ) {
         topico.classList.add('done')
     }
@@ -44,7 +46,7 @@ const AdicionaNaLista = ( { data, paragrafo, concluida }, id ) => {
     topico.innerHTML = conteudo
     //adiciona botão a <li>
     topico.appendChild(BotaoConcluir(carregaTarefa, id))
-    topico.appendChild(BotaoDeletar())
+    topico.appendChild(BotaoDeletar(carregaTarefa, id))
 
     return topico
 }
